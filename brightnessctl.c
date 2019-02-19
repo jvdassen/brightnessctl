@@ -298,7 +298,7 @@ void list_devices(struct device **devs) {
 
 void print_device(struct device *dev) {
 	char *format = p.mach ? "%s,%s,%d,%d%%,%d\n":
-		"Device '%s' of class '%s':\n\tCurrent brightness: %d (%d%%)\n\tMax brightness: %d\n\n";
+		"Device '%s' of class '%s':\n\tCurrent brightness: %d (%d%%)\n\tMax brightness: %d\n";
 	fprintf(stdout, format,
 		dev->id, dev->class,
 		dev->curr_brightness,
@@ -559,7 +559,7 @@ void fail(char *err_msg, ...) {
 }
 
 void usage() {
-	fprintf(stderr, "brightnessctl %s - read and control device brightness.\n\n", VERSION);
+	fprintf(stderr, "brightnessctl %s - read and control device brightness.\n", VERSION);
 	fprintf(stderr,
 "Usage: brightnessctl [options] [operation] [value]\n\
 \n\
